@@ -5,6 +5,9 @@
     if(!$result){
         die("Error : ". $conn->$conn_error);
     }
+
+    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,9 +23,10 @@
 <body>
     <div class="container">
         <h1>Movie Store</h1><br>
-        <button type="button" class="btn btn-primary">Movies</button>
-        <button type="button" class="btn btn-primary" >Member</button>
-        <button type="button" class="btn btn-primary">Actor</button>
+        <a type="button" class="btn btn-secondary" href="/VideoStore/mainmenu.php">Movies</a>
+        <a type="button" class="btn btn-primary" href="/VideoStore/member.php">Member</a>
+        <a type="button" class="btn btn-primary" href="/VideoStore/actor.php">Actor</a>
+
         <table class="table">
             <thead>
                 <tr>
@@ -38,7 +42,7 @@
                 <?php
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
-                            echo "<tr><td>".$row["Movie_ID"]."</td>"."<td>".$row["Movie_name"]."</td><td>".$row["Genre"]."</td>"."<td>".$row["Movie_length"]."</td>"."<td>".$row["DVD"]."</td>"."<td>"."<a class='btn btn-warning' href='editbio.php?SID=".$row["Movie_ID"]."'>Starring </a>"."</td>";
+                            echo "<tr><td>".$row["Movie_ID"]."</td>"."<td>".$row["Movie_name"]."</td><td>".$row["Genre"]."</td>"."<td>".$row["Movie_length"]."</td>"."<td>".$row["DVD"]."</td>"."<td>"."<a class='btn btn-warning' href='Starring.php?Movie_ID=".$row["Movie_ID"]."'>Starring </a>"."</td>";
                             echo "</tr>";    
                         }
                     }else {
@@ -48,7 +52,7 @@
                 ?>
             </tbody>
         </table>
-        <a class="btn btn-success" href='insertbio.php'>Insert Student</a>
+        <a class="btn btn-success" href='insertmovie.php'>Insert Movie</a>
     </div>
 </body>
 

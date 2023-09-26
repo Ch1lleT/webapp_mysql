@@ -1,0 +1,22 @@
+#form-container {
+	display: flex;
+}
+
+#Labels {
+	display: flex;
+	flex-direction: column;
+}
+
+#Inputs {
+	display: flex;
+	flex-direction: column;
+}
+
+#form-container label {
+	height: 28px;
+	margin-bottom: 3px;
+}
+#form-container input {
+	height: 28px;
+	margin-bottom: 3px;
+}
